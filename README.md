@@ -1,2 +1,2 @@
-# word-counter-tool
+index.html
 Free Word Counter Tool

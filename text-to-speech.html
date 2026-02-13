@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Text To Speech Tool</title>
+<meta name="description" content="Convert text to speech online for free.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+font-family:Arial;
+background:#f2f2f2;
+text-align:center;
+padding:20px;
+}
+
+.box{
+background:white;
+padding:20px;
+border-radius:12px;
+margin-top:20px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+textarea{
+width:90%;
+height:150px;
+padding:10px;
+font-size:16px;
+}
+
+button{
+padding:10px 15px;
+margin:10px;
+border:none;
+border-radius:5px;
+background:#e91e63;
+color:white;
+font-size:16px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Text To Speech 🔊</h1>
+
+<div class="box">
+<textarea id="text" placeholder="Type text here"></textarea>
+<br>
+<button onclick="speakText()">Speak</button>
+</div>
+
+<script>
+function speakText(){
+let text=document.getElementById("text").value;
+let speech=new SpeechSynthesisUtterance(text);
+speech.lang="en-US";
+window.speechSynthesis.speak(speech);
+}
+</script>
+
+</body>
+</html>

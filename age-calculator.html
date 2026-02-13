@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Age Calculator</title>
+<meta name="description" content="Calculate your age instantly with this free online age calculator.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+font-family:Arial;
+background:#f2f2f2;
+text-align:center;
+padding:20px;
+}
+
+.box{
+background:white;
+padding:20px;
+border-radius:12px;
+margin-top:20px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+input{
+padding:10px;
+font-size:16px;
+}
+
+button{
+padding:10px 15px;
+margin:10px;
+border:none;
+border-radius:5px;
+background:#ff5722;
+color:white;
+font-size:16px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Age Calculator 🎂</h1>
+
+<div class="box">
+<input type="date" id="dob">
+<br>
+<button onclick="calculateAge()">Calculate Age</button>
+<h2 id="result"></h2>
+</div>
+
+<script>
+function calculateAge(){
+let dob=document.getElementById("dob").value;
+let birthDate=new Date(dob);
+let diff=Date.now()-birthDate.getTime();
+let ageDate=new Date(diff);
+let age=Math.abs(ageDate.getUTCFullYear()-1970);
+document.getElementById("result").innerText="Your Age is "+age+" years";
+}
+</script>
+
+</body>
+</html>

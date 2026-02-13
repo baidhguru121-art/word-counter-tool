@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Remove Extra Spaces Tool</title>
+<meta name="description" content="Remove extra spaces from text instantly. Free online text cleaner tool.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+font-family:Arial;
+background:#f2f2f2;
+text-align:center;
+padding:20px;
+}
+
+.box{
+background:white;
+padding:20px;
+border-radius:12px;
+margin-top:20px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+textarea{
+width:90%;
+height:150px;
+padding:10px;
+font-size:16px;
+}
+
+button{
+padding:10px 15px;
+margin:5px;
+border:none;
+border-radius:5px;
+background:#28a745;
+color:white;
+font-size:16px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Remove Extra Spaces Tool</h1>
+<p>Paste your text and remove unwanted spaces instantly.</p>
+
+<div class="box">
+<textarea id="text"></textarea>
+<br><br>
+
+<button onclick="cleanText()">Remove Spaces</button>
+<button onclick="copyText()">Copy</button>
+<button onclick="clearText()">Clear</button>
+
+</div>
+
+<script>
+function cleanText(){
+let text=document.getElementById("text").value;
+let cleaned=text.replace(/\s+/g," ").trim();
+document.getElementById("text").value=cleaned;
+}
+
+function copyText(){
+let text=document.getElementById("text");
+text.select();
+document.execCommand("copy");
+alert("Copied!");
+}
+
+function clearText(){
+document.getElementById("text").value="";
+}
+</script>
+
+</body>
+</html>

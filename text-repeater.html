@@ -2,13 +2,12 @@
 <html>
 <head>
 <title>Text Repeater Tool</title>
-<meta name="description" content="Repeat text multiple times instantly with this free online text repeater.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 body{
-font-family:Arial;
-background:#f2f2f2;
+font-family: Arial;
+background:#f4f4f4;
 text-align:center;
 padding:20px;
 }
@@ -16,58 +15,69 @@ padding:20px;
 .box{
 background:white;
 padding:20px;
-border-radius:12px;
-margin-top:20px;
+border-radius:10px;
+max-width:500px;
+margin:auto;
 box-shadow:0 0 10px rgba(0,0,0,0.1);
 }
 
 textarea{
-width:90%;
-height:120px;
+width:100%;
+height:100px;
 padding:10px;
-font-size:16px;
+margin:10px 0;
 }
 
 input{
+width:100%;
 padding:10px;
-font-size:16px;
-width:100px;
+margin:10px 0;
 }
 
 button{
-padding:10px 15px;
-margin:10px;
-border:none;
-border-radius:5px;
-background:#673ab7;
+background:#007bff;
 color:white;
-font-size:16px;
+border:none;
+padding:12px;
+width:100%;
+border-radius:5px;
+font-size:18px;
+}
+
+.result{
+margin-top:20px;
+background:#eee;
+padding:15px;
+white-space:pre-wrap;
 }
 </style>
 </head>
 
 <body>
 
-<h1>Text Repeater 🔁</h1>
-
 <div class="box">
+<h2>🔁 Text Repeater Tool</h2>
+
 <textarea id="text" placeholder="Enter text"></textarea>
-<br>
-<input type="number" id="times" placeholder="Times">
-<br>
-<button onclick="repeatText()">Repeat</button>
-<textarea id="result"></textarea>
+
+<input type="number" id="count" placeholder="Repeat how many times">
+
+<button onclick="repeatText()">Repeat Text</button>
+
+<div class="result" id="result"></div>
 </div>
 
 <script>
 function repeatText(){
 let text=document.getElementById("text").value;
-let times=document.getElementById("times").value;
-let result="";
-for(let i=0;i<times;i++){
-result+=text+"\n";
+let count=document.getElementById("count").value;
+let output="";
+
+for(let i=0;i<count;i++){
+output += text + "\n";
 }
-document.getElementById("result").value=result;
+
+document.getElementById("result").innerText=output;
 }
 </script>
 

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Free ChatGPT Prompt Generator Tool</title>
+<meta name="description" content="Generate powerful ChatGPT prompts for blog, SEO, YouTube, business and more. 100% free AI prompt generator tool.">
+<style>
+body{font-family:Arial;background:#f4f6f9;text-align:center;padding:20px}
+textarea{width:90%;height:120px;padding:10px;margin:10px}
+button{background:#007bff;color:#fff;border:none;padding:12px 20px;font-size:16px;border-radius:5px}
+.box{background:#fff;padding:20px;border-radius:10px;max-width:700px;margin:auto}
+</style>
+</head>
+<body>
+
+<div class="box">
+<h1>🤖 ChatGPT Prompt Generator</h1>
+<p>Enter your topic and generate powerful AI prompts</p>
+
+<textarea id="topic" placeholder="Example: Make money online"></textarea>
+<br>
+<button onclick="generatePrompt()">Generate Prompt</button>
+
+<h3>Your AI Prompt 👇</h3>
+<textarea id="result"></textarea>
+</div>
+
+<script>
+function generatePrompt(){
+var topic=document.getElementById("topic").value;
+var prompt="Write a detailed SEO optimized article about "+topic+" with headings, FAQs and tips.";
+document.getElementById("result").value=prompt;
+}
+</script>
+
+</body>
+</html>
